@@ -50,7 +50,7 @@ class RenderUtils {
         guard let fontName = findFontName(title: name) else {
             return nil
         }
-        var fontDesc = MFontDescriptor(name: fontName, size: CGFloat(size))
+        var fontDesc = MFontDescriptor(fontAttributes: [.family: fontName, .size: CGFloat(size)])
         let lowerWeight = weight?.lowercased()
         if lowerWeight == "bold" || lowerWeight == "bolder" {
             #if os(iOS)
